@@ -5,10 +5,10 @@
 ## Lectures
 | Lecture |   Notebook/Slides | Required Reading/Viewing | Additional Reading/Viewing | Key Topics | 
 | ------ | ------- | ------------- | --------------------------- | -------------------------- | 
-| 1 | [A Brief History of Neural Networks](notebooks/A%20Brief%20History%20of%20Neural%20Networks.ipynb) | - | [Goodfellow Chapter 1](https://www.deeplearningbook.org/contents/intro.html) [fastai dk lesson 1](https://course.fast.ai/videos/?lesson=1)| Perceptrons, Multilayer Perceptrons, Neural Networks, The Rise of Deep Learning|
+| 1 | [A Brief History of Neural Networks](notebooks/A%20Brief%20History%20of%20Neural%20Networks.ipynb) | - | [Goodfellow Chapter 1](https://www.deeplearningbook.org/contents/intro.html), [fastai dl lesson 1](https://course.fast.ai/videos/?lesson=1)| Perceptrons, Multilayer Perceptrons, Neural Networks, The Rise of Deep Learning|
 | Optional | [Introduction to Jupyter and Python](notebooks/Introduction%20to%20Jupyter%20and%20Python.ipynb) | - | [fastai ml lesson 1](http://course18.fast.ai/ml)| iPython, The Jupyter Notebook, Numpy, Matplotlib, Working with Image Data|
-| 2 | [Computer Vision State of the Art](/welchlabs.io/unccv/intro_to_computer_vision/cv_applications.pptx) | [Alexnet Paper](https://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks.pdf) | - | State of the art in Classification, Detection, Pose Estimation, Image Generation, and other problems|
-| 3 | [Computer Vision Applications](/welchlabs.io/unccv/intro_to_computer_vision/state_of_the_art_2019.pptx) | - | - | What can we do with comptuer vision?|
+| 2 | [Computer Vision State of the Art](welchlabs.io/unccv/intro_to_computer_vision/cv_applications.pptx) | [Alexnet Paper](https://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks.pdf) | - | State of the art in Classification, Detection, Pose Estimation, Image Generation, and other problems|
+| 3 | [Computer Vision Applications](welchlabs.io/unccv/intro_to_computer_vision/state_of_the_art_2019.pptx) | - | - | What can we do with comptuer vision?|
 
 
 ## Programming Challenges
