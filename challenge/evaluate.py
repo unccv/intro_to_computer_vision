@@ -2,8 +2,14 @@
 ##
 ## evaluate.py
 ## Basic image processing utilties.
-## 
 ##
+##In order to test your code, you can use the images in the "data" folder. But for the actual evaulation, we will use different images. The variables
+## 'direction', 'threshold', 'pixel_count' will have different values. Any hard coded value here is only for you to test sample_student.py on your local machine.
+##
+##Here we check for 99% match between the images returned from sample_student.py and our evaluation images.
+##
+##In order to run this evaluation script locally, you have will have to install opencv(cv2) and pillow(PIL) package.
+##This can be done installed using pip by simply typing : "pip install pillow" and "pip install opencv-python" on your terminal.
 ## ------------------------- ##
 
 import numpy as np
@@ -23,9 +29,8 @@ program_start = time.time()
 score = 0
 
 #### Read Image ######
-img = cv2.imread('messi.jpg')
-img_pil = Image.open("messi.jpg")
-
+img = cv2.imread('../data/messi.jpg')
+img_pil = Image.open("../data/messi.jpg")
 
 
 print("Checking Gray Scale...")
@@ -34,12 +39,12 @@ print("Checking Gray Scale...")
 # Convert
 eval_img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
-# Get Student ans
+
 stu_img = ss.convert_to_grayscale(img)
 
 # Validate images
 if(len(stu_img.shape)==2):
-    if(eval_img.all()==stu_img.all()):
+    if(np.sum(np.abs(stu_img))/np.sum(eval_img) >= 0.93):
         score += 1
 else:
     score += 0
@@ -51,13 +56,13 @@ print("Checking crop Image...")
 ##### Crop Image ##########
 crop_area = (40, 50, 300, 400)
 # Convert
-eval_img = img_pil.crop((crop_area[0],crop_area[1],crop_area[1]+crop_area[2],crop_area[0]+crop_area[3]))
+eval_crop_img = img_pil.crop((crop_area[0],crop_area[1],crop_area[1]+crop_area[2],crop_area[0]+crop_area[3]))
 
 # Get Student ans
-stu_img = ss.crop_image(img, crop_area)
+stu_crop_img = ss.crop_image(img, crop_area)
 
 # Validate images
-if (np.array(eval_img)).all() == stu_img.all():
+if (np.sum(np.abs(stu_crop_img))/np.sum(np.array(eval_crop_img)) >= 0.99):
     score +=1
 else:
     score +=0
@@ -91,10 +96,10 @@ print("Checking for Maximum Contrast...")
 # Get Student ans
 stu_maximum_contrast = ss.maximize_contrast(img,[0,255])
 
-eval_contrast_image = cv2.imread("maximum_contrast_image.png")
+eval_contrast_image = cv2.imread("../data/maximum_contrast_image.png")
 # Validate images
 
-if stu_maximum_contrast.all() == eval_contrast_image.all():
+if(np.sum(np.abs(stu_maximum_contrast))/np.sum(eval_contrast_image) >= 0.99):
     score +=1
 else:
     score +=0
@@ -115,11 +120,11 @@ stu_flip_img = ss.flip_image(img, direction)
 # Validate images
 if direction=='vertical':
     if(stu_flip_img.shape == eval_vertical_img.shape):
-        if(stu_flip_img.all() == eval_vertical_img.all()):
+        if(np.sum(np.abs(stu_flip_img))/np.sum(eval_vertical_img) >= 0.99):
             score +=1
 elif direction=='horizontal':
     if(stu_flip_img.shape == eval_horizontal_img.shape):
-        if(stu_flip_img.all() == eval_horizontal_img.all()):
+        if(np.sum(np.abs(stu_flip_img))/np.sum(eval_horizontal_img) >= 0.99):
             score +=1
 else:
     score +=0
@@ -157,13 +162,14 @@ eval_norm_image = cv2.normalize(img, None, alpha=0, beta=1, norm_type=cv2.NORM_M
 stu_norm_image = ss.normalize(img)
 
 if(stu_norm_image.shape == eval_norm_image.shape):
-    if(stu_norm_image.all()==eval_norm_image.all()):
+    if(np.sum(np.abs(stu_norm_image))/np.sum(eval_norm_image) >= 0.99):
         score +=1
     else:
         score +=0
 else:
     score +=0
 print("Score: =", score)
+
 
 
 
@@ -186,7 +192,7 @@ dim = (width, height)
 eval_resized_image = cv2.resize(img, dim, interpolation = cv2.INTER_AREA)
     
 if(eval_resized_image.shape == stu_resized_image.shape):
-    if(eval_resized.all()== stu_resize_image.all()):
+    if(np.sum(np.abs(stu_resized_img))/np.sum(eval_resized_img) > 0.99):
             score += 1
     else:
             score += 0
