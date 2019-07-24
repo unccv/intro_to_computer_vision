@@ -21,7 +21,7 @@ In the challenge directory of this repo, you'll find a sample_student.py script.
 ### 2. State-of-the-Art on Your Own Data
 In this module, we'll quite a few State-of-the-Art computer vision algorithms. One of the really exciting things about computer vision right now is the amount of high quality, publically available code. For this part of your assignment, your job is to **run one publically avaialable algorithm on your own video or images**. Your deliverable is a short video, posted to YouTube, showing your results. For example, you could shoot your own video, and use and [Mask RCNN](https://github.com/matterport/Mask_RCNN) to process each frame, and stitch these results together into a short video. 
 
-**A Sample of The Computer Vision State of the Art in 2019**
+####A Sample of The Computer Vision State of the Art in 2019
 
 | PROBLEM | PAPER | CODE |
 | :---:         |     :---:      |          :---: |
