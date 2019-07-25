@@ -14,9 +14,14 @@
 ## Programming Challenges
 
 ### 1. Image Processing Script
-In the challenge directory of this repo, you'll find a sample_student.py script. Your job is to complete the image processing methods in this script. 
+The main purpose of this challenge is to familiarize ourselves with basic image processing utilities in computer vision. There are multiple in-built functions that aid in this, but the key to this challenge lies in implementing these functions using the numpy package alone. This will help us to see an image as a computer sees it, a matrix of pixels. 
 
-[more instructions here, including autolab]
+#### Instructions:
+* In the challenge directory of this repo, you'll find a sample_student.py script. Your job is to complete the image processing methods in this script.
+* The package numpy will already be imported in our evaluation script.
+* You can test your sample_student.py script locally by running the evaluate.py script in the challenge directory.
+* Sample images in the data directory have been used in the evaluate.py for better understanding of how the script will run. Please note that different images will be used for testing on our evaluation server.
+* You are allowed 3 submissions to the evaluation server, which will provide immediate scores and feedback.
 
 ### 2. State-of-the-Art on Your Own Data
 In this module, we'll quite a few State-of-the-Art computer vision algorithms. One of the really exciting things about computer vision right now is the amount of high quality, publically available code. For this part of your assignment, your job is to **run one publically avaialable algorithm on your own video or images**. Your deliverable is a short video, posted to YouTube, showing your results. For example, you could shoot your own video, and use and [Mask RCNN](https://github.com/matterport/Mask_RCNN) to process each frame, and stitch these results together into a short video. 
