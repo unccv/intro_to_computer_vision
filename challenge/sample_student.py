@@ -17,7 +17,7 @@ import numpy as np
 
 def convert_to_grayscale(im):
 	'''
-	Converts an (nxmx3) color image im into an (nxm) grayscale image.
+	Converts an (nxmx3) color image im into a (nxm) grayscale image.
 
 	'''
 
@@ -56,12 +56,12 @@ def maximize_contrast(im, target_range = [0, 255]):
 	'''
 
 
-	return image_adujusted
+	return image_adjusted
 
 
 def flip_image(im, direction = 'vertical'):
 	'''
-	Flip image along direction indicateded by the direction flag. 
+	Flip image along direction indicated by the direction flag. 
 	direction = vertical or horizontal.
 	'''
 
@@ -69,10 +69,10 @@ def flip_image(im, direction = 'vertical'):
 
 def count_pixels_above_threshold(im, threshold):
 	'''
-	Return the number of pixels with vaalues above threshold.
+	Return the number of pixels with values above threshold.
 	'''
 
-	return pixels_above_treshold
+	return pixels_above_threshold
 
 
 def normalize(im):
@@ -81,14 +81,14 @@ def normalize(im):
 	if im is of type uint8, convert to float.
 	'''
 
-	return noramlized_image
+	return normalized_image
 
 
 def resize_image(im, scale_factor):
 	'''
 	BONUS PROBLEM - worth 1 extra point.
 	Resize image by scale_factor using only numpy. 
-	If you wish to sumit a solution, change the return type from None. 
+	If you wish to submit a solution, change the return type from None. 
 
 	'''
 
