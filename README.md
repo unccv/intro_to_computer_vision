@@ -75,7 +75,6 @@ This repository requires the installation of a few extra packages, you can insta
 conda install -c pytorch -c fastai fastai
 conda install jupyter
 conda install opencv
-pip install jupyterthemes
 ~~~
 
 (Optional) [jupyterthemes](https://github.com/dunovank/jupyter-themes) can be nice when presenting notebooks, as it offers some cleaner visual themes than the stock notebook, and makes it easy to adjust the default font size for code, markdown, etc. You can install with pip: 
