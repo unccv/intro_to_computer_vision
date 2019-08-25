@@ -20,7 +20,7 @@ from PIL import Image
 
 
 #Import student's methods:
-import sample_student1 as ss
+import sample_student as ss
 
 program_start = time.time()
 
