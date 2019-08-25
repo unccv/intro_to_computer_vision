@@ -20,7 +20,7 @@ from PIL import Image
 
 
 #Import student's methods:
-import sample_student as ss
+import sample_student1 as ss
 
 program_start = time.time()
 
@@ -44,7 +44,7 @@ stu_img = ss.convert_to_grayscale(img)
 
 # Validate images
 if(len(stu_img.shape)==2):
-    if(np.sum(np.abs(stu_img))/np.sum(eval_img) >= 0.93):
+    if(np.sum(np.abs(stu_img))/np.sum(eval_img) >= 0.90):
         score += 1
 else:
     score += 0
@@ -62,7 +62,7 @@ eval_crop_img = img_pil.crop((crop_area[0],crop_area[1],crop_area[1]+crop_area[2
 stu_crop_img = ss.crop_image(img, crop_area)
 
 # Validate images
-if (np.sum(np.abs(stu_crop_img))/np.sum(np.array(eval_crop_img)) >= 0.99):
+if (np.sum(np.array(eval_crop_img)/np.sum(np.abs(stu_crop_img))) >= 0.99):
     score +=1
 else:
     score +=0
@@ -99,7 +99,7 @@ stu_maximum_contrast = ss.maximize_contrast(img,[0,255])
 eval_contrast_image = cv2.imread("../data/maximum_contrast_image.png")
 # Validate images
 
-if(np.sum(np.abs(stu_maximum_contrast))/np.sum(eval_contrast_image) >= 0.99):
+if(np.sum(eval_contrast_image)/ np.sum(np.abs(stu_maximum_contrast)) >= 0.99):
     score +=1
 else:
     score +=0
@@ -112,7 +112,7 @@ print("Checking Flip Image...")
 eval_horizontal_img = cv2.flip( img, 0 )
 eval_vertical_img = cv2.flip( img, 1 )
 
-direction = "horizontal"
+direction = "vertical"
 
 # Get Student ans
 stu_flip_img = ss.flip_image(img, direction)
@@ -120,11 +120,11 @@ stu_flip_img = ss.flip_image(img, direction)
 # Validate images
 if direction=='vertical':
     if(stu_flip_img.shape == eval_vertical_img.shape):
-        if(np.sum(np.abs(stu_flip_img))/np.sum(eval_vertical_img) >= 0.99):
+        if(np.array_equal(eval_vertical_img, stu_flip_img)):
             score +=1
 elif direction=='horizontal':
     if(stu_flip_img.shape == eval_horizontal_img.shape):
-        if(np.sum(np.abs(stu_flip_img))/np.sum(eval_horizontal_img) >= 0.99):
+        if(np.array_equal(eval_horizontal_img, stu_flip_img)):
             score +=1
 else:
     score +=0
@@ -137,14 +137,10 @@ print("Checking Pixels above Threshold...")
 
 #threshold value and pixel count
 threshold = 250
-pixel_count = 7558
-
-eval_horizontal_img = cv2.flip( img, 0 )
-eval_vertical_img = cv2.flip( img, 1 )
+pixel_count = 4543
 
 # Get Student ans
 stu_pixel_count = ss.count_pixels_above_threshold(img, threshold)
-
 if stu_pixel_count == pixel_count:
     score +=1
 else:
@@ -162,7 +158,7 @@ eval_norm_image = cv2.normalize(img, None, alpha=0, beta=1, norm_type=cv2.NORM_M
 stu_norm_image = ss.normalize(img)
 
 if(stu_norm_image.shape == eval_norm_image.shape):
-    if(np.sum(np.abs(stu_norm_image))/np.sum(eval_norm_image) >= 0.99):
+    if(np.sum(eval_norm_image)/ np.sum(np.abs(stu_norm_image)) >= 0.99):
         score +=1
     else:
         score +=0
@@ -173,7 +169,7 @@ print("Score: =", score)
 
 
 
-print("Checking for Resized image...")
+print("Checking for Resized image... (BONUS PROBLEM)")
 ##### Resiszed Image ##########
 
 #scale factor
@@ -190,7 +186,7 @@ dim = (width, height)
 
 # resize image
 eval_resized_image = cv2.resize(img, dim, interpolation = cv2.INTER_AREA)
-    
+
 if(eval_resized_image.shape == stu_resized_image.shape):
     if(np.sum(np.abs(stu_resized_img))/np.sum(eval_resized_img) > 0.99):
             score += 1
@@ -204,6 +200,6 @@ print("Score: =", score)
 
 program_end = time.time()
 complete_time = program_end - program_start
-omplete_time = round(complete_time, 5)
+complete_time = round(complete_time, 5)
 print("Program completetion time (seconds): = ", complete_time)
 print("Total Score: =", score,"/7")
