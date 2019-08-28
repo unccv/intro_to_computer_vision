@@ -141,7 +141,7 @@ pixel_count = 4543
 
 # Get Student ans
 stu_pixel_count = ss.count_pixels_above_threshold(img, threshold)
-if (stu_pixel_count <= (pixel_count+2000) or stu_pixel_count >= (pixel_count-2000)):
+if (stu_pixel_count <= (pixel_count+2000) and stu_pixel_count >= (pixel_count-2000)):
     score +=1
 else:
     score +=0
