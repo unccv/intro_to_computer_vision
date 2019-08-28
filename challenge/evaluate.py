@@ -109,8 +109,8 @@ print("Score: =", score)
 
 print("Checking Flip Image...")
 ##### Flipped Image Image ##########
-eval_horizontal_img = cv2.flip( img, 0 )
-eval_vertical_img = cv2.flip( img, 1 )
+eval_horizontal_img = cv2.flip( img, 1 )
+eval_vertical_img = cv2.flip( img, 0 )
 
 direction = "vertical"
 
@@ -141,7 +141,7 @@ pixel_count = 4543
 
 # Get Student ans
 stu_pixel_count = ss.count_pixels_above_threshold(img, threshold)
-if stu_pixel_count == pixel_count:
+if (stu_pixel_count <= (pixel_count+2000) and stu_pixel_count >= (pixel_count-2000)):
     score +=1
 else:
     score +=0
@@ -188,7 +188,7 @@ dim = (width, height)
 eval_resized_image = cv2.resize(img, dim, interpolation = cv2.INTER_AREA)
 
 if(eval_resized_image.shape == stu_resized_image.shape):
-    if(np.sum(np.abs(stu_resized_img))/np.sum(eval_resized_img) > 0.99):
+    if(np.sum(np.abs(stu_resized_image))/np.sum(eval_resized_image) > 0.99):
             score += 1
     else:
             score += 0
