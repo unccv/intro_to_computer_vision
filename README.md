@@ -2,28 +2,9 @@
 ![](graphics/computer_vision_cropped.png)
 
 
-## Lectures
-| Lecture |   Notebook/Slides | Required Reading/Viewing | Additional Reading/Viewing | Key Topics | 
-| ------ | ------- | ------------- | --------------------------- | -------------------------- | 
-| 1 | [A Brief History of Neural Networks](notebooks/A%20Brief%20History%20of%20Neural%20Networks.ipynb) | - | [Goodfellow Chapter 1](https://www.deeplearningbook.org/contents/intro.html), [fastai dl lesson 1](https://course.fast.ai/videos/?lesson=1)| Perceptrons, Multilayer Perceptrons, Neural Networks, The Rise of Deep Learning|
-| Optional | [Introduction to Jupyter and Python](notebooks/Introduction%20to%20Jupyter%20and%20Python.ipynb) | - | [fastai ml lesson 1](http://course18.fast.ai/ml)| iPython, The Jupyter Notebook, Numpy, Matplotlib, Working with Image Data|
-| 2 | [Computer Vision State of the Art](http://www.welchlabs.io/unccv/intro_to_computer_vision/state_of_the_art_2019.pptx) | [Alexnet Paper](https://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks.pdf) | - | State of the art in Classification, Detection, Pose Estimation, Image Generation, and other problems|
-| 3 | [Computer Vision Applications](http://www.welchlabs.io/unccv/intro_to_computer_vision/cv_applications.pptx) | - | - | What can we do with comptuer vision?|
 
 
-## Programming Challenges
-
-### 1. Image Processing Script
-The main purpose of this challenge is to familiarize ourselves with basic image processing utilities in computer vision. There are multiple in-built functions that aid in this, but the key to this challenge lies in implementing these functions using the numpy package alone. This will help us to see an image as a computer sees it, a matrix of pixels. 
-
-#### Instructions:
-* In the challenge directory of this repo, you'll find a sample_student.py script. Your job is to complete the image processing methods in this script.
-* The package numpy will already be imported in our evaluation script.
-* You can test your sample_student.py script locally by running the evaluate.py script in the challenge directory.
-* Sample images in the data directory have been used in the evaluate.py for better understanding of how the script will run. Please note that different images will be used for testing on our evaluation server.
-* You are allowed 3 submissions to the evaluation server, which will provide immediate scores and feedback.
-
-### 2. State-of-the-Art on Your Own Data
+### 1. State-of-the-Art on Your Own Data
 In this module, we'll quite a few State-of-the-Art computer vision algorithms. One of the really exciting things about computer vision right now is the amount of high quality, publically available code. For this part of your assignment, your job is to **run one publically avaialable algorithm on your own video or images**. Your deliverable is a short video, posted to YouTube, showing your results. For example, you could shoot your own video, and use and [Mask RCNN](https://github.com/matterport/Mask_RCNN) to process each frame, and stitch these results together into a short video. 
 
    #### A Sample of The Computer Vision State of the Art in 2019
